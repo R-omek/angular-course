@@ -1,0 +1,15 @@
+<p>Form</p>
+<hr>
+<app-add-card (onAddCar)="updateCarList($event)"></app-add-card>
+<hr>
+<button class="btn btn-success" (click)="changeCarName()">Change car's name</button>
+<button class="btn btn-danger" (click)="deleteCar()">Delete a car</button>
+<hr>
+<div class="list-group">
+    <ul>
+        <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car" [name]="car.name">
+            <h4 class="list-group-item-heading">Name: {{car.name}}</h4>
+            <p class="list-group-item-text">Year: {{car.year}}</p>
+        </app-car>
+    </ul>
+</div>

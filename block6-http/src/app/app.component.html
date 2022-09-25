@@ -1,0 +1,18 @@
+<div class="col-6" style="margin: 0 auto;padding: 40px" [formGroup]="form">
+  <h2>{{appTitle}}</h2>
+  <input type="text" class="form-control" formControlName="carName" placeholder="Name">
+  <br>
+  <input type="text" class="form-control" formControlName="carColor" placeholder="Color">
+  <br>
+  <button class="btn btn-success" (click)="addCar()">
+    Add car
+  </button>
+  <hr>
+  <ul class="list-group">
+    <li [ngStyle]="{background: car.color}" class="list-group-item flex justify-content-between" *ngFor="let car of cars">
+      <span>{{car.id}}. </span>{{car.name}}
+      <button class="btn btn-sm btn-primary" (click)="setNewColor(car.id, car.name)">change color</button>
+      <button class="btn btn-sm btn-danger" (click)="deleteCar(car)">Delete</button>
+    </li>
+  </ul>
+</div>
