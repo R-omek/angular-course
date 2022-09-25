@@ -1,1 +1,5 @@
-<div [@clickedDiv]="clickedDivState" (click)="changeDivState()" (mousedown)="clickedDivState = 'active'"></div>
+<button class="btn btn-primary" (click)="isVisible = !isVisible">Switch</button>
+
+<div class="alert alert-danger" *ngIf="isVisible" [@divTrigger]="isVisible ? 'show' : 'hide'">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, recusandae?
+</div>
