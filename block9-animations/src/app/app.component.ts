@@ -1,3 +1,4 @@
+import { AnimationEvent } from '@angular/animations';
 import { Component } from '@angular/core';
 import { divTrigger } from './app.animations';
 
@@ -9,4 +10,11 @@ import { divTrigger } from './app.animations';
 })
 export class AppComponent {
   isVisible = false
+
+  onAnimationStart(event: AnimationEvent) {
+    console.log('start: ', event)
+  }
+  onAnimationDone(event: AnimationEvent) {
+    console.log('done: ', event)
+  }
 }
